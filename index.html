@@ -17,7 +17,7 @@
             margin: 25px 0;
             margin-left: auto;
             margin-right: auto;
-            min-width: 1225px;
+            width: 100%;
             font-size: 0.7em;
             border-radius: 5px 5px 0 0;
             overflow: hidden;
@@ -230,14 +230,14 @@
             }
 
             function createFlightTab(index, value) {
-                var open_tab = '<table class="tabContent tabFlightContent" id="tabFlight"><thead><tr><th colspan="10">Flight Details</th></tr><tr><th>Date</th><th>Booking #</th><th>Description</th><th>Country From</th><th>Airport From</th><th>Departure</th><th>Country To</th><th>Airport To</th><th>Arrival</th><th style="float:right;">Google Map</th></tr></thead><tbody>';
-                var row = '<tr><td>' + value["Date"] + '</td><td>' + value["Booking #"] + '</td><td>' + value["Description"] + '</td><td>' + value["Country From"] + '</td><td>' + value["Airport From"] + '</td><td>' + value["Departure"] + '</td><td>' + value["Country To"] + '</td><td>' + value["Airport To"] + '</td><td>' + value["Arrival"] + '</td><td>' + '<button type="button" id="map' + index + '" class="btn_map" onclick="viewMap(this)">View</button>' + '</td></tr>';
+                var open_tab = '<table class="tabContent tabFlightContent" id="tabFlight"><thead><tr><th colspan="2">Flight Details - ' + value["Description"] + '</th></tr><tr><th>Country From</th><th>Country To</th></thead><tbody>';
+                var row = '<tr><td>' + value["Country From"] + '</td><td>' + value["Country To"] + '</td></tr>';
                 $("#content").html($("#content").html() + open_tab + row + '</tbody></table>');
             }
 
             function createHotelTab(index, value) {
-                var open_tab = '<table class="tabContent tabHotelContent" id="tabHotel"><thead><tr><th colspan="7">Hotel Details</th></tr><tr><th>Date</th><th>Booking #</th><th>Description</th><th>Hotel Address</th><th>Check-In</th><th>Check-Out</th><th style="float:right;">Google Map</th></tr></thead><tbody>';
-                var row = '<tr><td>' + value["Date"] + '</td><td>' + value["Booking #"] + '</td><td>' + value["Description"] + '</td><td>' + value["Hotel Address"] + '</td><td>' + value["Check-In"] + '</td><td>' + value["Check-Out"] + '</td><td>' + '<button type="button" id="map' + index + '" class="btn_map" onclick="viewMap(this)">View</button>' + '</td></tr>';
+                var open_tab = '<table class="tabContent tabHotelContent" id="tabHotel"><thead><tr><th colspan="2">Hotel Details - ' + value["Description"] + '</th></tr><tr><th>Booking #</th><th>Check-In</th></thead><tbody>';
+                var row = '<tr><td>' + value["Booking #"] + '</td><td>' + value["Check-In"] + '</td></tr>';
                 $("#content").html($("#content").html() + open_tab + row + '</tbody></table>');
             }
 
