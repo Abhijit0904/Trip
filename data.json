@@ -1,7 +1,6 @@
 {
     "Activities": [
         {
-            "Activity #": 1,
             "Date": "",
             "Booking Type": "Flight",
             "Booking #": "",
@@ -11,29 +10,18 @@
             "Departure": "",
             "Country To": "Malaysia",
             "Airport To": "Kuala Lumpur Intl (KUL)",
-            "Arrival": "",
-            "Check-In": "",
-            "Check-Out": "",
-            "Hotel Address": ""
+            "Arrival": ""
         },
         {
-            "Activity #": 2,
             "Date": "",
             "Booking Type": "Hotel",
             "Booking #": "",
             "Description": "",
-            "Country From": "",
-            "Airport From": "",
-            "Departure": "",
-            "Country To": "",
-            "Airport To": "",
-            "Arrival": "",
             "Check-In": "",
             "Check-Out": "",
             "Hotel Address": ""
         },
         {
-            "Activity #": 3,
             "Date": "Sat 28-Dec-2019",
             "Booking Type": "Flight",
             "Booking #": "R799NR",
@@ -44,28 +32,17 @@
             "Country To": "Thailand - Bangkok",
             "Airport To": "Bangkok - Don Mueang (DMK)",
             "Arrival": "Sat 28-Dec-2019 22:40",
-            "Check-In": "",
-            "Check-Out": "",
-            "Hotel Address": ""
         },
         {
-            "Activity #": 4,
             "Date": "Sat 28-Dec-2019",
             "Booking Type": "Hotel",
             "Booking #": "7470997173709",
             "Description": "Prince Palace Hotel",
-            "Country From": "",
-            "Airport From": "",
-            "Departure": "",
-            "Country To": "",
-            "Airport To": "",
-            "Arrival": "",
             "Check-In": "Sat 28-Dec-2019 14:00",
             "Check-Out": "Thu 02-Jan-2020 00:00",
             "Hotel Address": "488/800 Bo Bae Tower, Bangkok, 10100 Thailand"
         },
         {
-            "Activity #": 5,
             "Date": "Thu 02-Jan-2020",
             "Booking Type": "Other",
             "Booking #": "",
@@ -76,28 +53,17 @@
             "Country To": "Thailand - Pattaya",
             "Airport To": "",
             "Arrival": "Thu 02-Jan-2020 00:00",
-            "Check-In": "",
-            "Check-Out": "",
-            "Hotel Address": ""
         },
         {
-            "Activity #": 6,
             "Date": "Thu 02-Jan-2020",
             "Booking Type": "Hotel",
             "Booking #": "7471012963261",
             "Description": "Hotel J Residence",
-            "Country From": "",
-            "Airport From": "",
-            "Departure": "",
-            "Country To": "",
-            "Airport To": "",
-            "Arrival": "",
             "Check-In": "Thu 02-Jan-2020 14:00",
             "Check-Out": "Sun 05-Jan-2020 12:00",
             "Hotel Address": "221/62 Moo 6 North Pattaya, Pattaya, Chonburi, 20150 Thailand"
         },
         {
-            "Activity #": 7,
             "Date": "Sun 05-Jan-2020",
             "Booking Type": "Flight",
             "Booking #": "WTLZWS",
@@ -108,28 +74,17 @@
             "Country To": "Thailand - Phuket",
             "Airport To": "Phuket (HKT)",
             "Arrival": "Sun 05-Jan-2020 08:15",
-            "Check-In": "",
-            "Check-Out": "",
-            "Hotel Address": ""
         },
         {
-            "Activity #": 8,
             "Date": "Sun 05-Jan-2020",
             "Booking Type": "Hotel",
             "Booking #": "7471023568462",
             "Description": "The House Patong",
-            "Country From": "",
-            "Airport From": "",
-            "Departure": "",
-            "Country To": "",
-            "Airport To": "",
-            "Arrival": "",
             "Check-In": "Sun 05-Jan-2020 14:00",
             "Check-Out": "Thu 09-Jan-2020 00:00",
             "Hotel Address": "74/48 Nanai Rd, Patong, Phuket, 83150 Thailand"
         },
         {
-            "Activity #": 9,
             "Date": "Thu 09-Jan-2020",
             "Booking Type": "Flight",
             "Booking #": "",
@@ -139,13 +94,9 @@
             "Departure": "",
             "Country To": "Singapore",
             "Airport To": "",
-            "Arrival": "",
-            "Check-In": "",
-            "Check-Out": "",
-            "Hotel Address": ""
+            "Arrival": ""
         },
         {
-            "Activity #": 10,
             "Date": "Thu 09-Jan-2020",
             "Booking Type": "Flight",
             "Booking #": "",
@@ -155,10 +106,7 @@
             "Departure": "",
             "Country To": "Mauritius",
             "Airport To": "SSR Intl (SSR)",
-            "Arrival": "",
-            "Check-In": "",
-            "Check-Out": "",
-            "Hotel Address": ""
+            "Arrival": ""
         }
     ]
 }
