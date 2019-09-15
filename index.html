@@ -242,8 +242,8 @@
             }
 
             function createOtherTab(index, value) {
-                var open_tab = '<table class="tabContent tabTripContent" id="tabTrip"><thead><tr><th colspan="9">Local Trip Details</th></tr><tr><th>Date</th><th>Booking #</th><th>Description</th><th>From</th><th>To</th><th>Transport</th><th>Time Start</th><th>Time End</th><th style="float:right;">Google Map</th></tr></thead><tbody>';
-                var row = '<tr><td>' + value["Date"] + '</td><td>' + value["Booking #"] + '</td><td>' + value["Description"] + '</td><td>' + value["From"] + '</td><td>' + value["To"] + '</td><td>' + value["Transport"] + '</td><td>' + value["Time Start"] + '</td><td>' + value["Time End"] + '</td><td>' + '<button type="button" id="map' + index + '" class="btn_map" onclick="viewMap(this)">View</button>' + '</td></tr>';
+                var open_tab = '<table class="tabContent tabTripContent" id="tabTrip"><thead><tr><th colspan="2">Trip Details - ' + value["Description"] + '</th></tr><tr><th>From</th><th>To</th></thead><tbody>';
+                var row = '<tr><td>' + value["From"] + '</td><td>' + value["To"] + '</td></tr>';
                 $("#content").html($("#content").html() + open_tab + row + '</tbody></table>');
             }
 
