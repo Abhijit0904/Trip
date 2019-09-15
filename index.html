@@ -223,7 +223,8 @@
             function createFlightTab(index, value) {
                 var open_tab = '<table class="tabContent tabFlightContent" id="tabFlight"><thead><tr><th colspan="2">Flight Details - ' + value["Description"] + '</th></tr><tr><th>Country From</th><th>Country To</th></thead><tbody>';
                 var row = '<tr><td>' + value["Country From"] + '</td><td>' + value["Country To"] + '</td></tr>';
-                $("#content").html($("#content").html() + open_tab + row + '</tbody></table>');
+                var row2 = '<tr><td colspan="2"><table><tr><td>Booking #:</td><td>' + value["Booking #"] + '</td></tr><tr><td>Airport From:</td><td>' + value["Airport From"] + '</td></tr><tr><td>Departure:</td><td>' + value["Departure"] + '</td></tr><tr><td>Airport To:</td><td>' + value["Airport To"] + '</td></tr><tr><td>Arrival:</td><td>' + value["Arrival"] + '</td></tr></table></td></tr>'
+                $("#content").html($("#content").html() + open_tab + row + row2 + '</tbody></table>');
             }
 
             function createHotelTab(index, value) {
