@@ -129,7 +129,7 @@
             <table class="tabContent tabHeaderContent">
                 <tbody>
                     <tr>
-                        <td><span id="currentCountry">Malaysia</span></td>
+                        <td><span id="currentLocation">Malaysia</span></td>
                         <td><span></span><select id="currentDate">
                                 <option value="all">All</option>
                                 <option value="yesterday">yesterday</option>
@@ -281,31 +281,29 @@
                     })
                 }
             });
+            window.open('https://www.google.com/maps/search/?api=1&query=pizza+mauritius', '_blank');
         }
 
     </script>
+
     <script>
-        function initMap() {
-            var location = {
-                lat: -25,
-                lng: 300
-            };
-            var map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 4,
-                center: location
-            });
-            var marker = new google.maps.Marker({
-                position: location,
-                map: map
-            })
+        var x = document.getElementById("currentLocation");
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
         }
 
-    </script>
-    <script>
-        var = 'AIzaSyAQVw3YZq81WbO4OLXexgo6p7L5m8i_r-E';
+        function showPosition(position) {
+            x.innerHTML = "Latitude: " + position.coords.latitude + " Longitude: " + position.coords.longitude;
+            console.log(position);
+        }
+        getLocation();
 
     </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap" type="text/javascript"></script>
 </body>
 
 </html>
