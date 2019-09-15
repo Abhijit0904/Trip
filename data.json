@@ -40,7 +40,10 @@
             "Description": "Prince Palace Hotel",
             "Check-In": "Sat 28-Dec-2019 14:00",
             "Check-Out": "Thu 02-Jan-2020 00:00",
-            "Hotel Address": "488/800 Bo Bae Tower, Bangkok, 10100 Thailand"
+            "Hotel Address": "488/800 Bo Bae Tower, Bangkok, 10100 Thailand",
+            "Phone": "+66 2 628 1111",
+            "Website": "https://www.princepalace.co.th/",
+            "Location": "Bangkok, Thailand"
         },
         {
             "Date": "Thu 02-Jan-2020",
@@ -61,7 +64,10 @@
             "Description": "Hotel J Residence",
             "Check-In": "Thu 02-Jan-2020 14:00",
             "Check-Out": "Sun 05-Jan-2020 12:00",
-            "Hotel Address": "221/62 Moo 6 North Pattaya, Pattaya, Chonburi, 20150 Thailand"
+            "Hotel Address": "221/62 Moo 6 North Pattaya, Pattaya, Chonburi, 20150 Thailand",
+            "Phone": "+66 38 423 741",
+            "Website": "http://hoteljpattaya.com/",
+            "Location": "Pattaya, Thailand"
         },
         {
             "Date": "Sun 05-Jan-2020",
@@ -79,10 +85,13 @@
             "Date": "Sun 05-Jan-2020",
             "Booking Type": "Hotel",
             "Booking #": "7471023568462",
-            "Description": "The House Patong",
+            "Description": "The House Patong Hotel",
             "Check-In": "Sun 05-Jan-2020 14:00",
             "Check-Out": "Thu 09-Jan-2020 00:00",
-            "Hotel Address": "74/48 Nanai Rd, Patong, Phuket, 83150 Thailand"
+            "Hotel Address": "74/48 Nanai Rd, Patong, Phuket, 83150 Thailand",
+            "Phone": "+66 76 540 535",
+            "Website": "http://www.thehousepatong.com/",
+            "Location": "Phuket, Thailand"
         },
         {
             "Date": "Thu 09-Jan-2020",
