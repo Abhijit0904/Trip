@@ -327,6 +327,12 @@
             id = id.replace("btnExpand", "");
             var row_id = '#row' + id;
             $(row_id).toggle();
+            if ($('#'+context.id).text() == '+'){
+                $('#'+context.id).text('-');
+            }
+            else{
+                $('#'+context.id).text('+');
+            }
         }
 
     </script>
