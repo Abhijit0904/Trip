@@ -147,6 +147,10 @@
             max-width: 10em;
             word-break: break-all;
         }
+        
+        .expand{
+            float : right;
+        }
 
     </style>
 </head>
@@ -257,16 +261,16 @@
             }
 
             function createFlightTab(index, value) {
-                var open_tab = '<table class="tabContent tabFlightContent" id="tabFlight"><thead><tr><th colspan="2">Flight Details - ' + value["Description"] + '</th></tr><tr><th>Country From</th><th>Country To</th></thead><tbody>';
-                var row = '<tr><td>' + value["Country From"] + '</td><td>' + value["Country To"] + '</td></tr>';
-                var row2 = '<tr><td colspan="2"><table class="tabDetails"><tr><td>Booking #:</td><td>' + value["Booking #"] + '</td></tr><tr><td>Airport From:</td><td>' + value["Airport From"] + '</td></tr><tr><td>Departure:</td><td>' + value["Departure"] + '</td></tr><tr><td>Airport To:</td><td>' + value["Airport To"] + '</td></tr><tr><td>Arrival:</td><td>' + value["Arrival"] + '</td></tr><tr><td colspan = "2"><div class="btn_map_container"><button type="button" id="map' + index + '" class="btn_map" onclick="viewMap(this)">View on Google Map</button></div></td></tr></table></td></tr>';
+                var open_tab = '<table class="tabContent tabFlightContent" id="tabFlight"><thead><tr><th colspan="2">Flight Details - ' + value["Description"] + '</th><th rowspan="2"><button type="button" class="expand" id="btnExpand' + index + '" onclick="toggleDetails(this)">+</button></th></tr><tr><th>Country From</th><th>Country To</th></thead><tbody>';
+                var row = '<tr><td>' + value["Country From"] + '</td><td colspan="2">' + value["Country To"] + '</td></tr>';
+                var row2 = '<tr id="row' + index + '"><td colspan="3"><table class="tabDetails"><tr><td>Booking #:</td><td>' + value["Booking #"] + '</td></tr><tr><td>Airport From:</td><td>' + value["Airport From"] + '</td></tr><tr><td>Departure:</td><td>' + value["Departure"] + '</td></tr><tr><td>Airport To:</td><td>' + value["Airport To"] + '</td></tr><tr><td>Arrival:</td><td>' + value["Arrival"] + '</td></tr><tr><td colspan = "2"><div class="btn_map_container"><button type="button" id="map' + index + '" class="btn_map" onclick="viewMap(this)">View on Google Map</button></div></td></tr></table></td></tr>';
                 $("#content").html($("#content").html() + open_tab + row + row2 + '</tbody></table>');
             }
 
             function createHotelTab(index, value) {
                 var open_tab = '<table class="tabContent tabHotelContent" id="tabHotel"><thead><tr><th colspan="2">Hotel Details - ' + value["Description"] + '</th></tr><tr><th>Location</th><th>Check-In</th></thead><tbody>';
                 var row = '<tr><td>' + value["Location"] + '</td><td>' + value["Check-In"] + '</td></tr>';
-                var row2 = '<tr><td colspan="2"><table class="tabDetails"><tr><td>Booking #:</td><td>' + value["Booking #"] + '</td></tr><tr><td>Address:</td><td>' + value["Hotel Address"] + '</td></tr><tr><td>Check-Out:</td><td>' + value["Check-Out"] + '</td></tr><tr><td>Phone:</td><td>' + value["Phone"] + '</td></tr><tr><td>Website:</td><td>' + value["Website"] + '</td></tr><tr><td colspan = "2"><div class="btn_map_container"><button type="button" id="map' + index + '" class="btn_map" onclick="viewMap(this)">View on Google Map</button></div></td></tr></table></td></tr>';
+                var row2 = '<tr id="row' + index + '"><td colspan="2"><table class="tabDetails"><tr><td>Booking #:</td><td>' + value["Booking #"] + '</td></tr><tr><td>Address:</td><td>' + value["Hotel Address"] + '</td></tr><tr><td>Check-Out:</td><td>' + value["Check-Out"] + '</td></tr><tr><td>Phone:</td><td>' + value["Phone"] + '</td></tr><tr><td>Website:</td><td>' + value["Website"] + '</td></tr><tr><td colspan = "2"><div class="btn_map_container"><button type="button" id="map' + index + '" class="btn_map" onclick="viewMap(this)">View on Google Map</button></div></td></tr></table></td></tr>';
                 $("#content").html($("#content").html() + open_tab + row + row2 + '</tbody></table>');
             }
 
@@ -316,6 +320,13 @@
                     })
                 }
             });
+        }
+
+        function toggleDetails(context) {
+            var id = context.id;
+            id = id.replace("btnExpand", "");
+            var row_id = '#row' + id;
+            $(row_id).toggle();
         }
 
     </script>
