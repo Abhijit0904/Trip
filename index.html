@@ -185,6 +185,13 @@
             display: none;
         }
 
+        .expandSize {
+            width: 2em;
+            min-width: 2em;
+            max-width: 2em;
+            word-break: break-all;
+        }
+
     </style>
 </head>
 
@@ -209,40 +216,6 @@
         <div id="content"></div>
     </div>
     <script>
-        available_dates = [];
-
-        function buildDate(dateToProcess) {
-            var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-            var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-            var dayName = days[dateToProcess.getDay()];
-            var day = dateToProcess.getDate();
-            var month = months[dateToProcess.getMonth()];
-            var year = dateToProcess.getFullYear();
-            var processed_date = dayName + " " + day + '-' + month + "-" + year;
-            return processed_date;
-        }
-
-        function getCurrentDate() {
-            var d = new Date();
-            d.setDate(d.getDate() - 1);
-            available_dates.push(buildDate(d));
-            d.setDate(d.getDate() + 1);
-            available_dates.push(buildDate(d));
-            d.setDate(d.getDate() + 1);
-            available_dates.push(buildDate(d));
-            d.setDate(d.getDate() + 1);
-            available_dates.push(buildDate(d));
-        }
-
-        function setCurrentDate() {
-            getCurrentDate();
-            $('#currentDate option:contains("yesterday")').text(available_dates[0]);
-            $('#currentDate option:contains("today")').text('Sat 28-Dec-2019');
-            $('#currentDate option:contains("tomorrow")').text(available_dates[2]);
-            $('#currentDate option:contains("day_after")').text(available_dates[3]);
-            $('#currentDate').val("today");
-        }
-        setCurrentDate();
         $(document).ready(function() {
             var old_booking_type;
             var isTabCreated;
@@ -294,14 +267,14 @@
             }
 
             function createFlightTab(index, value) {
-                var open_tab = '<table class="tabContent tabFlightContent" id="tabFlight"><thead><tr><th colspan="2">Flight Details - ' + value["Description"] + '</th><th rowspan="2"><button type="button" class="flightExpand" id="btnExpand' + index + '" onclick="toggleDetails(this)">+</button></th></tr><tr><th>Country From</th><th>Country To</th></thead><tbody>';
+                var open_tab = '<table class="tabContent tabFlightContent" id="tabFlight"><thead><tr><th colspan="2">Flight Details - ' + value["Description"] + '</th><th class="expandSize" rowspan="2"><button type="button" class="flightExpand" id="btnExpand' + index + '" onclick="toggleDetails(this)">+</button></th></tr><tr><th>Country From</th><th>Country To</th></thead><tbody>';
                 var row = '<tr><td>' + value["Country From"] + '</td><td colspan="2">' + value["Country To"] + '</td></tr>';
                 var row2 = '<tr id="row' + index + '" class="detailsRow"><td colspan="3"><table class="tabDetails"><tr><td>Booking #:</td><td>' + value["Booking #"] + '</td></tr><tr><td>Airport From:</td><td>' + value["Airport From"] + '</td></tr><tr><td>Departure:</td><td>' + value["Departure"] + '</td></tr><tr><td>Airport To:</td><td>' + value["Airport To"] + '</td></tr><tr><td>Arrival:</td><td>' + value["Arrival"] + '</td></tr><tr><td colspan = "2"><div class="btn_map_container"><button type="button" id="map' + index + '" class="btn_map" onclick="viewMap(this)">View on Google Map</button></div></td></tr></table></td></tr>';
                 $("#content").html($("#content").html() + open_tab + row + row2 + '</tbody></table>');
             }
 
             function createHotelTab(index, value) {
-                var open_tab = '<table class="tabContent tabHotelContent" id="tabHotel"><thead><tr><th colspan="2">Hotel Details - ' + value["Description"] + '</th><th rowspan="2"><button type="button" class="hotelExpand" id="btnExpand' + index + '" onclick="toggleDetails(this)">+</button></th></tr><tr><th>Location</th><th>Check-In</th></thead><tbody>';
+                var open_tab = '<table class="tabContent tabHotelContent" id="tabHotel"><thead><tr><th colspan="2">Hotel Details - ' + value["Description"] + '</th><th class="expandSize" rowspan="2"><button type="button" class="hotelExpand" id="btnExpand' + index + '" onclick="toggleDetails(this)">+</button></th></tr><tr><th>Location</th><th>Check-In</th></thead><tbody>';
                 var row = '<tr><td>' + value["Location"] + '</td><td>' + value["Check-In"] + '</td></tr>';
                 var row2 = '<tr id="row' + index + '" class="detailsRow"><td colspan="3"><table class="tabDetails"><tr><td>Booking #:</td><td>' + value["Booking #"] + '</td></tr><tr><td>Address:</td><td>' + value["Hotel Address"] + '</td></tr><tr><td>Check-Out:</td><td>' + value["Check-Out"] + '</td></tr><tr><td>Phone:</td><td>' + value["Phone"] + '</td></tr><tr><td>Website:</td><td>' + value["Website"] + '</td></tr><tr><td colspan = "2"><div class="btn_map_container"><button type="button" id="map' + index + '" class="btn_map" onclick="viewMap(this)">View on Google Map</button></div></td></tr></table></td></tr>';
                 $("#content").html($("#content").html() + open_tab + row + row2 + '</tbody></table>');
@@ -317,6 +290,41 @@
 
     </script>
     <script>
+        available_dates = [];
+
+        function buildDate(dateToProcess) {
+            var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            var dayName = days[dateToProcess.getDay()];
+            var day = dateToProcess.getDate();
+            var month = months[dateToProcess.getMonth()];
+            var year = dateToProcess.getFullYear();
+            var processed_date = dayName + " " + day + '-' + month + "-" + year;
+            return processed_date;
+        }
+
+        function getCurrentDate() {
+            var d = new Date();
+            d.setDate(d.getDate() - 1);
+            available_dates.push(buildDate(d));
+            d.setDate(d.getDate() + 1);
+            available_dates.push(buildDate(d));
+            d.setDate(d.getDate() + 1);
+            available_dates.push(buildDate(d));
+            d.setDate(d.getDate() + 1);
+            available_dates.push(buildDate(d));
+        }
+
+        function setCurrentDate() {
+            getCurrentDate();
+            $('#currentDate option:contains("yesterday")').text(available_dates[0]);
+            $('#currentDate option:contains("today")').text('Sat 28-Dec-2019');
+            $('#currentDate option:contains("tomorrow")').text(available_dates[2]);
+            $('#currentDate option:contains("day_after")').text(available_dates[3]);
+            $('#currentDate').val("today");
+        }
+        setCurrentDate();
+
         function viewMap(context) {
             var id = context.id;
             id = id.replace("map", "");
@@ -359,7 +367,7 @@
             var id = context.id;
             id = id.replace("btnExpand", "");
             var row_id = '#row' + id;
-            $(row_id).toggle();
+            $(row_id).slideToggle();
             if ($('#' + context.id).text() == '+') {
                 $('#' + context.id).text('-');
             } else {
